@@ -1,8 +1,15 @@
 [
-    {
-    "title": "Components",
-    "summary": "Components are the building blocks of a React application. They encapsulate reusable UI elements and their functionality. By creating modular components, you can efficiently develop and maintain your application's user interface."
-  },
+   {title: "Components",
+    summary: "Components are the building blocks of a React application. They encapsulate reusable UI elements and their functionality. By creating modular components, you can efficiently develop and maintain your application's user interface.",
+    example: "
+const MyComponent = () => {\n
+  return (\n
+    <div>\n
+      <h2>Components Example</h2>\n
+      <p>This is a simple component.</p>\n
+    </div>\n
+  );\n
+};\n"},
   {
     "title": "State",
     "summary": "State represents the data that can change in a React component. It allows you to manage and update values within a component, enabling dynamic behavior and interactivity. State is typically used to store and manipulate user input, component-specific data, or application state."
