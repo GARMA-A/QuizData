@@ -1,0 +1,96 @@
+[
+    {
+    "title": "<h3>Components</h3>",
+    "summary": "Components are the building blocks of a React application. They encapsulate reusable UI elements and their functionality. By creating modular components, you can efficiently develop and maintain your application's user interface."
+  },
+  {
+    "title": "<h3>State</h3>",
+    "summary": "State represents the data that can change in a React component. It allows you to manage and update values within a component, enabling dynamic behavior and interactivity. State is typically used to store and manipulate user input, component-specific data, or application state."
+  },
+  {
+    "title": "<h3>Props</h3>",
+    "summary": "Props (short for properties) are a way to pass data from a parent component to its child components. They allow you to configure and customize child components, making them reusable and adaptable. Props are read-only and should not be modified within the child component."
+  },
+  {
+    "title": "<h3>children Prop</h3>",
+    "summary": "The children prop is a special prop that allows you to pass content or components between the opening and closing tags of a component. It enables the composition of components and can be used to create complex UI structures or provide additional information to child components."
+  },
+  {
+    "title": "<h3>useState</h3>",
+    "summary": "useState is a built-in React hook that enables you to add stateful behavior to functional components. It provides a state variable and a corresponding setter function, allowing you to store and update state within a functional component. useState is commonly used for managing local component state.",
+    "example": "import React, { useState } from 'react';\n\nconst Counter = () => {\n  const [count, setCount] = useState(0);\n\n  const increment = () => {\n    setCount(count + 1);\n  };\n\n  return (\n    <div>\n      <p>Count: {count}</p>\n      <button onClick={increment}>Increment</button>\n    </div>\n  );\n};"
+  },
+  {
+    "title": "<h3>useEffect</h3>",
+    "summary": "useEffect is another built-in React hook that allows you to perform side effects in functional components. It enables you to run code in response to component mounts, updates, or unmounts. useEffect is often used for data fetching, subscribing to events, or performing cleanup operations.",
+    "example": "import React, { useEffect, useState } from 'react';\n\nconst Timer = () => {\n  const [seconds, setSeconds] = useState(0);\n\n  useEffect(() => {\n    const interval = setInterval(() => {\n      setSeconds(prevSeconds => prevSeconds + 1);\n    }, 1000);\n\n    return () => {\n      clearInterval(interval);\n    };\n  }, []);\n\n  return (\n    <div>\n      <p>Seconds: {seconds}</p>\n    </div>\n  );\n};"
+  },
+  {
+    "title": "<h3>useReducer</h3>",
+    "summary": "useReducer is a React hook that provides an alternative way to manage state in a component. It is useful when the state logic is complex and involves multiple sub-values or when the next state depends on the previous state. useReducer follows the same principles as the Redux library's reducer pattern.",
+    "example": "import React, { useReducer } from 'react';\n\nconst initialState = { count: 0 };\n\nconst reducer = (state, action) => {\n  switch (action.type) {\n    case 'increment':\n      return { count: state.count + 1 };\n    case 'decrement':\n      return { count: state.count - 1 };\n    default:\n      return state;\n  }\n};\n\nconst Counter = () => {\n  const [state, dispatch] = useReducer(reducer, initialState);\n\n  const increment = () => {\n    dispatch({ type: 'increment' });\n  };\n\n  const decrement = () => {\n    dispatch({ type: 'decrement' });\n  };\n\n  return (\n    <div>\n      <p>Count: {state.count}</p>\n      <button onClick={increment}>Increment</button>\n      <button onClick={decrement}>Decrement</button>\n    </div>\n  );\n};"
+  },
+  {
+    "title": "<h3>useRef</h3>",
+    "summary": "useRef is a React hook that allows you to create a mutable reference to a value or a DOM element. Unlike state or props, useRef does not trigger re-renders when its value changes. It is often used to access or modify DOM elements, manage focus, or store values without triggering re-renders.",
+    "example": "import React, { useRef } from 'react';\n\nconst TextInput = () => {\n  const inputRef = useRef(null);\n\n  const focusInput = () => {\n    inputRef.current.focus();\n  };\n\n  return (\n    <div>\n      <input type=\"text\" ref={inputRef} />\n      <button onClick={focusInput}>Focus Input</button>\n    </div>\n  );\n};"
+  },
+  {
+    "title": "<h3>React Router</h3>",
+    "summary": "React Router is a popular library that provides declarative routing for single-page applications built with React. It enables navigation between different views or components based on the current URL. React Router simplifies the process of building complex routing systems and handling URL parameters.",
+    "example": "import React from 'react';\nimport { BrowserRouter as Router, Route, Link } from 'react-router-dom';\n\nconst Home = () => <h2>Home</h2>;\nconst About = () => <h2>About</h2>;\n\nconst App = () => {\n  return (\n    <Router>\n      <div>\n        <nav>\n          <ul>\n            <li>\n              <Link to=\"/\">Home</Link>\n            </li>\n            <li>\n              <Link to=\"/about\">About</Link>\n            </li>\n          </ul>\n        </nav>\n\n        <Route path=\"/\" exact component={Home} />\n        <Route path=\"/about\" component={About} />\n      </div>\n    </Router>\n  );\n};"
+  },
+
+  {
+    "title": "<h3>useEffect</h3>",
+    "summary": "useEffect is another built-in React hook that allows you to perform side effects in functional components. It enables you to run code in response to component mounts, updates, or unmounts. useEffect is often used for data fetching, subscribing to events, or performing cleanup operations.",
+    "example": "import React, { useEffect, useState } from 'react';\n\nconst Timer = () => {\n  const [seconds, setSeconds] = useState(0);\n\n  useEffect(() => {\n    const interval = setInterval(() => {\n      setSeconds(prevSeconds => prevSeconds + 1);\n    }, 1000);\n\n    return () => {\n      clearInterval(interval);\n    };\n  }, []);\n\n  return (\n    <div>\n      <p>Seconds: {seconds}</p>\n    </div>\n  );\n};"
+  },
+  {
+    "title": "<h3>useReducer</h3>",
+    "summary": "useReducer is a React hook that provides an alternative way to manage state in a component. It is useful when the state logic is complex and involves multiple sub-values or when the next state depends on the previous state. useReducer follows the same principles as the Redux library's reducer pattern.",
+    "example": "import React, { useReducer } from 'react';\n\nconst initialState = { count: 0 };\n\nconst reducer = (state, action) => {\n  switch (action.type) {\n    case 'increment':\n      return { count: state.count + 1 };\n    case 'decrement':\n      return { count: state.count - 1 };\n    default:\n      return state;\n  }\n};\n\nconst Counter = () => {\n  const [state, dispatch] = useReducer(reducer, initialState);\n\n  const increment = () => {\n    dispatch({ type: 'increment' });\n  };\n\n  const decrement = () => {\n    dispatch({ type: 'decrement' });\n  };\n\n  return (\n    <div>\n      <p>Count: {state.count}</p>\n      <button onClick={increment}>Increment</button>\n      <button onClick={decrement}>Decrement</button>\n    </div>\n  );\n};"
+  },
+  {
+    "title": "<h3>useRef</h3>",
+    "summary": "useRef is a React hook that allows you to create a mutable reference to a value or a DOM element. Unlike state or props, useRef does not trigger re-renders when its value changes. It is often used to access or modify DOM elements, manage focus, or store values without triggering re-renders.",
+    "example": "import React, { useRef } from 'react';\n\nconst TextInput = () => {\n  const inputRef = useRef(null);\n\n  const focusInput = () => {\n    inputRef.current.focus();\n  };\n\n  return (\n    <div>\n      <input type=\"text\" ref={inputRef} />\n      <button onClick={focusInput}>Focus Input</button>\n    </div>\n  );\n};"
+  },
+  {
+    "title": "<h3>React Router</h3>",
+    "summary": "React Router is a popular library that provides declarative routing for single-page applications built with React. It enables navigation between different views or components based on the current URL. React Router simplifies the process of building complex routing systems and handling URL parameters.",
+    "example": "import React from 'react';\nimport { BrowserRouter as Router, Route, Link } from 'react-router-dom';\n\nconst Home = () => <h2>Home</h2>;\nconst About = () => <h2>About</h2>;\n\nconst App = () => {\n  return (\n    <Router>\n      <div>\n        <nav>\n          <ul>\n            <li>\n              <Link to=\"/\">Home</Link>\n            </li>\n            <li>\n              <Link to=\"/about\">About</Link>\n            </li>\n          </ul>\n        </nav>\n\n        <Route path=\"/\" exact component={Home} />\n        <Route path=\"/about\" component={About} />\n      </div>\n    </Router>\n  );\n};"
+  },
+  {
+    "title": "React under the hood",
+    "summary": "React under the hood refers to understanding the internal mechanisms and implementation details of the React library. It involves learning about concepts like virtual DOM, reconciliation, component lifecycle, rendering process, and optimizing React applications. Understanding React's internals can help you write more efficient and performant code."
+  },
+  {
+    "title": "React under the hood",
+    "summary": "React under the hood refers to understanding the internal mechanisms and implementation details of the React library. It involves learning about concepts like virtual DOM, reconciliation, component lifecycle, rendering process, and optimizing React applications. Understanding React's internals can help you write more efficient and performant code."
+  },
+  {
+    "title": "React under the hood",
+    "summary": "React under the hood refers to understanding the internal mechanisms and implementation details of the React library. It involves learning about concepts like virtual DOM, reconciliation, component lifecycle, rendering process, and optimizing React applications. Understanding React's internals can help you write more efficient and performant code."
+  }
+  , {
+    "title": "<h3>Conditional Rendering</h3>",
+    "summary": "Conditional rendering in React allows you to display different content or components based on certain conditions. By using conditional statements or ternary operators, you can dynamically control what gets rendered based on variables, state values, or props. Conditional rendering is useful for creating dynamic and responsive user interfaces."
+  },
+  {
+    "title": "<h3>Forms and User Input</h3>",
+    "summary": "Forms and user input handling in React involve capturing and processing data entered by the user. React provides various techniques to handle form submission, input validation, and managing form state. You can use controlled components, uncontrolled components, or form libraries like Formik to simplify form handling in React applications."
+  },
+  {
+    "title": "<h3>React Context</h3>",
+    "summary": "React Context is a feature that allows you to share data between components without manually passing props through each level of the component tree. It provides a way to create a global state or share common functionality across components. Context consists of a provider component that sets up the shared data and one or more consumer components that access the data."
+  },
+  {
+    "title": "<h3>Error Handling</h3>",
+    "summary": "Error handling in React involves handling and displaying errors that occur during rendering, data fetching, or component lifecycle methods. React provides error boundaries, which are higher-order components that catch JavaScript errors anywhere in their child component tree. Error boundaries help prevent the entire application from crashing due to a single error and allow you to display fallback UI or error messages."
+  },
+  {
+    "title": "<h3>React Hooks</h3>",
+    "summary": "React Hooks are functions that enable you to use state and other React features in functional components. They provide a way to reuse stateful logic or lifecycle methods without using class components. React Hooks, such as useState, useEffect, useContext, and custom hooks, allow you to write more concise and reusable code in functional components."
+  }
+]
